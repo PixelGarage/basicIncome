@@ -52,15 +52,13 @@ function pixelgarage_preprocess_webform_confirmation(&$vars) {
   node_object_prepare($post);
 
 // fill the node properties and save it to the database
-  $post->title = $submission->data[4][0] . " " . $submission->data[6][0];
+  $post->title = $submission->data[4][0] . " & " . $submission->data[6][0];
   $post->field_image[$post->language][0]['fid'] = $submission->data[1][0]; // fid
   $post->field_e_mail[$post->language][0]['email'] = $submission->data[2][0]; // email
-  $post->field_name[$post->language][0]['value'] = $submission->data[4][0]; // first name
+  $post->field_name[$post->language][0]['value'] = $submission->data[4][0]; // Name left
+  $post->field_name_2[$post->language][0]['value'] = $submission->data[6][0]; // Name right
   $post->field_quote[$post->language][0]['value'] = substr($submission->data[5][0], 0, 70); // Quote
-  $post->field_last_name[$post->language][0]['value'] = $submission->data[6][0]; // last name
   $post->field_canton[$post->language][0]['tid'] = _pixelgarage_convert_taxonomy('cantons', $submission->data[7][0]); // Canton
-  $post->field_party[$post->language][0]['tid'] =  _pixelgarage_convert_taxonomy('parties', $submission->data[8][0]); // Party
-  $post->field_parliamentarian[$post->language][0]['value'] = $submission->data[9][0] == 'yes' ? 1 : 0; // Parliamentarian
 
   $post = node_submit($post);
   node_save($post);
