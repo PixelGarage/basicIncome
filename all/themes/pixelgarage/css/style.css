@@ -1060,7 +1060,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
   color: #222222;
@@ -5794,7 +5794,7 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.4;
@@ -5901,7 +5901,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -8537,6 +8537,16 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   content: "\f196";
 }
 @font-face {
+  font-family: 'UniversLight';
+  src: url('../fonts/UniversLight/UniversLight.eot');
+  src: url('../fonts/UniversLight/UniversLight.eot') format('embedded-opentype'), url('../fonts/UniversLight/UniversLight.woff2') format('woff2'), url('../fonts/UniversLight/UniversLight.woff') format('woff'), url('../fonts/UniversLight/UniversLight.ttf') format('truetype'), url('../fonts/UniversLight/UniversLight.svg#UniversLight') format('svg');
+}
+@font-face {
+  font-family: 'UniversRoman';
+  src: url('../fonts/UniversRoman/UniversRoman.eot');
+  src: url('../fonts/UniversRoman/UniversRoman.eot') format('embedded-opentype'), url('../fonts/UniversRoman/UniversRoman.woff2') format('woff2'), url('../fonts/UniversRoman/UniversRoman.woff') format('woff'), url('../fonts/UniversRoman/UniversRoman.ttf') format('truetype'), url('../fonts/UniversRoman/UniversRoman.svg#UniversRoman') format('svg');
+}
+@font-face {
   font-family: 'EuropaRegular';
   src: url('../fonts/EuropaRegular/EuropaRegular.eot');
   src: url('../fonts/EuropaRegular/EuropaRegular.eot') format('embedded-opentype'), url('../fonts/EuropaRegular/EuropaRegular.woff2') format('woff2'), url('../fonts/EuropaRegular/EuropaRegular.woff') format('woff'), url('../fonts/EuropaRegular/EuropaRegular.ttf') format('truetype'), url('../fonts/EuropaRegular/EuropaRegular.svg#EuropaRegular') format('svg');
@@ -8622,7 +8632,7 @@ form#user-login {
 }
 #user-create-account .login-register {
   padding: 3px 8px;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 12px;
   line-height: 1;
   letter-spacing: 1.5px;
@@ -8688,7 +8698,7 @@ form#user-login {
   display: inline-block;
   margin: 0;
   padding: 3px 8px;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 12px;
   line-height: 1;
   letter-spacing: 1.5px;
@@ -8768,7 +8778,7 @@ form#user-login {
   display: inline-block;
   margin: 0;
   padding: 3px 8px;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 12px;
   line-height: 1;
   letter-spacing: 1.5px;
@@ -8931,7 +8941,7 @@ form#user-login {
  * --------------------------------------------------*/
 #block-locale-language {
   display: none;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 16px;
 }
 @media screen and (min-width: 768px) {
@@ -8969,7 +8979,7 @@ form#user-login {
 }
 #block-locale-language ul.language-switcher-locale-url > li a.language-link.active,
 #block-locale-language ul.language-switcher-locale-url > li a.language-link:hover {
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   text-decoration: none;
 }
 #block-locale-language ul.language-switcher-locale-url > li span.locale-untranslated {
@@ -9004,6 +9014,24 @@ body.i18n-fr .views-row-even .node-post.view-mode-front {
   padding: 0;
   height: 100%;
 }
+.node-post.view-mode-front div.row div.col-sm-12 .field-name-field-name {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  height: auto;
+  padding: 0.3em 1em 0.15em;
+  text-align: center;
+  line-height: 1;
+  background-color: #235234;
+  color: #fff;
+}
+.node-post.view-mode-front div.row div.col-sm-12 .field-name-field-name-2 {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  width: 30%;
+  height: auto;
+}
 .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote {
   position: absolute;
   top: 68.9%;
@@ -9019,7 +9047,7 @@ body.i18n-fr .views-row-even .node-post.view-mode-front {
   hyphens: auto;
 }
 .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote .field-item {
-  font-family: 'EuropaLight';
+  font-family: 'UniversLight';
   font-size: 4.5vw;
 }
 @media screen and (min-width: 480px) {
@@ -9057,7 +9085,7 @@ body.i18n-fr .views-row-even .node-post.view-mode-front {
   border-bottom: 3px solid #ffffff;
 }
 .node-post.view-mode-back div.row div.col-sm-12 .field-name-quote p {
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -9072,7 +9100,7 @@ body.i18n-fr .views-row-even .node-post.view-mode-front {
 }
 .node-post.view-mode-back div.row div.col-sm-12 .field-name-field-quote .field-item {
   width: 333%;
-  font-family: 'EuropaLight';
+  font-family: 'UniversLight';
   font-size: 6vw;
   text-transform: uppercase;
   color: #ffffff;
@@ -9328,7 +9356,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
   hyphens: auto;
 }
 .node-post.view-mode-full div.row div.col-sm-6.left-region .field-name-field-quote .field-item {
-  font-family: 'EuropaLight';
+  font-family: 'UniversLight';
   font-size: 4.5vw;
 }
 @media screen and (min-width: 480px) {
@@ -9363,7 +9391,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
   }
 }
 .node-webform div.col-sm-12 .field-name-title h2 {
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 20px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -9390,7 +9418,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component label {
   width: auto;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 11px;
   letter-spacing: 1.2px;
   text-align: left;
@@ -9413,13 +9441,13 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 .node-webform div.col-sm-12 form.webform-client-form .webform-component div.description {
   display: block;
   margin: 10px 0 0;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 11px;
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component input,
 .node-webform div.col-sm-12 form.webform-client-form .webform-component textarea {
   height: auto;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 11px;
   letter-spacing: 1.1px;
   text-align: left;
@@ -9476,7 +9504,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
   display: inline-block;
   margin: 0;
   padding: 0.5em 1em;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 2.5vw;
   line-height: 1;
   letter-spacing: 1.5px;
@@ -9532,7 +9560,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
   display: inline-block;
   margin: 0;
   padding: 0.5em 1em;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 2.5vw;
   line-height: 1;
   letter-spacing: 1.5px;
@@ -9565,7 +9593,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
   display: none;
   margin: 3px 0 0 0;
   vertical-align: top;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 16px;
   text-align: left;
   color: #222222;
@@ -9595,7 +9623,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 }
 .block-webform .node-webform div.col-sm-12 form.webform-client-form .webform-component input {
   padding: 5px;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 12px;
   text-align: left;
   color: #222222;
@@ -9663,7 +9691,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
   }
 }
 .block-webform .webform-confirmation p {
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 11px;
   text-align: left;
   color: #222222;
@@ -9686,7 +9714,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
   width: 100%;
 }
 .node-page div.col-sm-12 .field-name-title h2 {
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 20px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -9708,7 +9736,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 .node-page div.col-sm-12 .field-name-body h4,
 .node-page div.col-sm-12 .field-name-body h5,
 .node-page div.col-sm-12 .field-name-body h6 {
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 16px;
 }
 .node-page div.col-sm-12 .field-name-body h1,
@@ -9718,7 +9746,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 }
 .node-page div.col-sm-12 .field-name-body p,
 .node-page div.col-sm-12 .field-name-body tbody td {
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 16px;
   -ms-word-break: break-all;
   word-break: break-word;
@@ -9730,7 +9758,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 }
 .node-page div.col-sm-12 .field-name-body pre,
 .node-page div.col-sm-12 .field-name-body address {
-  font-family: 'EuropaRegularItalic';
+  font-family: 'UniversLight';
   font-size: 16px;
 }
 .node-page div.col-sm-12 .field-name-body hr {
@@ -9807,7 +9835,7 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 }
 .view-post-grid .view-content .views-row .header-card {
   margin: -30px 10% 10px;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 15px;
   text-align: left;
   text-transform: uppercase;
@@ -10119,7 +10147,7 @@ form#views-exposed-form-europa-page-europe .views-exposed-form .views-exposed-wi
   display: inline-block;
   margin: 0;
   padding: 3px 8px;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 12px;
   line-height: 1;
   letter-spacing: 1.5px;
@@ -10270,7 +10298,7 @@ header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu li
   cursor: pointer;
   display: inline-block;
   padding: 10px 15px;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 12px;
   line-height: 1;
   text-transform: uppercase;
@@ -10425,7 +10453,7 @@ header#navbar .navbar-exposed-form > .container {
 }
 .main-container #page-header .region-header h2.block-title {
   margin: 20px 0 10px;
-  font-family: 'EuropaRegular', serif;
+  font-family: 'UniversLight', serif;
   font-size: 24px;
 }
 .main-container .row section .page-header {
@@ -10460,7 +10488,7 @@ footer.footer .region-footer .block ul.menu li a,
 footer.footer .region-footer .block ul.menu li span {
   display: block;
   padding: 0 8px;
-  font-family: 'EuropaBold';
+  font-family: 'UniversRoman';
   font-size: 12px;
   line-height: 1;
   text-transform: uppercase;
