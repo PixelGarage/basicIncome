@@ -9013,24 +9013,32 @@ body.i18n-fr .views-row-even .node-post.view-mode-front {
 .node-post.view-mode-front div.row div.col-sm-12 {
   padding: 0;
   height: 100%;
+  /*
+          .field-name-field-name-2 {
+          position: absolute;
+          top: 47%;
+          right: 8%;
+          height: auto;
+          padding: 0.2em 1em 0.065em;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 1;
+          background-color: @pxl-name-field-bg-color-right;
+          color: @pxl-name-field-color;
+        }
+        */
 }
 .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-name {
   position: absolute;
-  top: 50%;
-  left: 10%;
+  top: 55%;
+  left: -5%;
   height: auto;
-  padding: 0.3em 1em 0.15em;
+  padding: 0.2em 1em 0.065em;
+  text-transform: uppercase;
   text-align: center;
   line-height: 1;
-  background-color: #235234;
-  color: #fff;
-}
-.node-post.view-mode-front div.row div.col-sm-12 .field-name-field-name-2 {
-  position: absolute;
-  top: 40%;
-  right: 10%;
-  width: 30%;
-  height: auto;
+  background-color: #94804d;
+  color: #ffffff;
 }
 .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote {
   position: absolute;
@@ -9048,26 +9056,26 @@ body.i18n-fr .views-row-even .node-post.view-mode-front {
 }
 .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote .field-item {
   font-family: 'UniversLight';
-  font-size: 4.5vw;
+  font-size: 5vw;
 }
 @media screen and (min-width: 480px) {
   .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote .field-item {
-    font-size: 2.3vw;
+    font-size: 3vw;
   }
 }
 @media screen and (min-width: 768px) {
   .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote .field-item {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 @media screen and (min-width: 1024px) {
   .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote .field-item {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 @media screen and (min-width: 1280px) {
   .node-post.view-mode-front div.row div.col-sm-12 .field-name-field-quote .field-item {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 .node-post.view-mode-back div.row {
@@ -9361,23 +9369,29 @@ body.i18n-fr .node-post.view-mode-full div.row div.col-sm-6.left-region {
 }
 @media screen and (min-width: 480px) {
   .node-post.view-mode-full div.row div.col-sm-6.left-region .field-name-field-quote .field-item {
-    font-size: 2.3vw;
+    font-size: 2.5vw;
   }
 }
 @media screen and (min-width: 768px) {
   .node-post.view-mode-full div.row div.col-sm-6.left-region .field-name-field-quote .field-item {
-    font-size: 12px;
+    font-size: 17px;
   }
 }
 @media screen and (min-width: 1024px) {
   .node-post.view-mode-full div.row div.col-sm-6.left-region .field-name-field-quote .field-item {
-    font-size: 12px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1280px) {
   .node-post.view-mode-full div.row div.col-sm-6.left-region .field-name-field-quote .field-item {
-    font-size: 15px;
+    font-size: 18px;
   }
+}
+.node-post.view-mode-full div.row div.col-sm-6.right-region .field-name-field-name {
+  font-size: 45px;
+}
+.node-post.view-mode-full div.row div.col-sm-6.right-region .field-name-field-name-2 {
+  font-size: 45px;
 }
 /*
  *  Node / block webform component
@@ -10231,7 +10245,7 @@ header#navbar .navbar-top-container > .container .navbar-meta {
 header#navbar .navbar-top-container > .container .navbar-header {
   float: none;
   margin: -33px 0 0;
-  text-align: left;
+  text-align: center;
 }
 header#navbar .navbar-top-container > .container .navbar-header a.logo {
   display: inline-block;
