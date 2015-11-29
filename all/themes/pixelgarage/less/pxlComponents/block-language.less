@@ -28,29 +28,29 @@
     >li {
       #pxl-mixins.no-list-style;
       display:inline-block;
-      margin: 0 -0.25em 0 0;
-      padding: 0 10px;
-      line-height: 1;
-      border-right: 1px solid @text-color;
-
-      &.first {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      &.last {
-        border-right: none;
-      }
+      margin: 0 -2px;
 
       a.language-link {
+        padding: 3px 0 0 5px;
         text-transform: uppercase;
         text-decoration: none;
-        color: @link-color;
+        color: @pxl-color-gold;
+        line-height: 1;
         outline: none;
 
         &.active, &:hover {
           font-family: @pxl-text-font-bold;
           text-decoration: none;
+          color: @pxl-color-orange;
         }
+
+        &::after {
+          content: '/';
+          padding-left: 5px;
+        }
+      }
+      &.last a::after {
+        content: '';
       }
 
       span.locale-untranslated {

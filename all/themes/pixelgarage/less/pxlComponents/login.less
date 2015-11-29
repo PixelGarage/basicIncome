@@ -7,9 +7,9 @@
 // -------------------------
 //text
 @pxl-login-btn-color: #fff;
-@pxl-login-btn-hover-color: @pxl-color-blue;
-@pxl-login-link-color: @pxl-color-blue;
-@pxl-login-link-hover-color: @pxl-color-blue;
+@pxl-login-btn-hover-color: @pxl-color-orange;
+@pxl-login-link-color: @pxl-color-orange;
+@pxl-login-link-hover-color: @pxl-color-orange;
 
 
 // Mixins
@@ -26,6 +26,12 @@
   clear: both;
   float: none;
   width: auto;
+
+  input:focus,
+  textarea:focus {
+    border: 1px solid @pxl-color-border-active;
+    .box-shadow(0 0 3px @pxl-color-orange);
+  }
 }
 
 /* User login page */
@@ -53,7 +59,7 @@ form#user-login {
   }
 
   .login-register {
-    #pxl-mixins.submit-button(#fff, @pxl-color-red);
+    #pxl-mixins.submit-button(#fff, @pxl-color-orange);
     display: inline-block;
     position: absolute;
     right: 0;
@@ -91,7 +97,7 @@ form#user-login {
       margin: 0;
 
       .btn {
-        #pxl-mixins.submit-button(#fff, @pxl-color-blue);
+        #pxl-mixins.submit-button(#fff, @pxl-color-orange);
       }
     }
 
@@ -146,7 +152,7 @@ form#user-login {
     }
 
     .btn {
-      #pxl-mixins.submit-button(#fff, @pxl-color-red);
+      #pxl-mixins.submit-button(#fff, @pxl-color-orange);
       float: right;
     }
   }

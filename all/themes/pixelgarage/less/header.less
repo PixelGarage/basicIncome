@@ -4,12 +4,6 @@
 
 // Variables
 // -------------------------
-@pxl-header-sm-height: 80px;
-@pxl-header-md-height: 120px;
-@pxl-header-height: 165px;
-
-@pxl-nav-exposed-sm-top: 125px;
-@pxl-nav-exposed-md-top: 81px;
 
 // Mixins
 // -------------------------
@@ -18,111 +12,83 @@
 
 // Main settings
 // -------------------------
-body.navbar-is-fixed-top {
-  padding-top: @pxl-header-sm-height !important;
-
-  &.admin-menu {
-    padding-top: @pxl-header-sm-height !important;
-  }
-
-  @media @tablet {
-    padding-top: @pxl-header-md-height !important;
-
-    &.admin-menu {
-      padding-top: @pxl-header-md-height !important;
-    }
-  }
-  @media @normal {
-    padding-top: @pxl-header-height !important;
-
-    &.admin-menu {
-      padding-top: @pxl-header-height !important;
-    }
-  }
-}
-
-
 header#navbar {
+  margin: 0;
   border-bottom: none;
   background: #fff none;
 
   .navbar-top-container > .container {
-    padding: 10px @grid-gutter-width / 2;
-    height: @pxl-header-sm-height;
+    padding: 0 @grid-gutter-width / 2;
+    height: auto;
 
     .navbar-meta {
       position: relative;
-      width: 100%;
-      min-height: 20px;
-      text-align: right;
-    }
 
-    @media @tablet {
-      height: @pxl-header-md-height;
-      .navbar-meta {
-        text-align: left;
+      .block-locale {
+        position: absolute;
+        right: @grid-gutter-width / 2;
+        top: 20px;
+        font-family: @pxl-text-font-bold;
+        font-size: @font-size-large;
       }
-    }
-    @media @normal {
-      height: @pxl-header-height;
     }
 
     .navbar-header {
       float: none;
-      margin: -33px 0 0;
+      margin: 0;
       text-align: center;
 
       // header (branding)
       a.logo {
         display: inline-block;
-        margin: 0;
-        padding: 0 @grid-gutter-width / 2 0 0;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
         outline: none;
 
         img {
-          height: auto;
-          width: 80px;
+          margin: 10px auto;
+          height: 40px;
+          width: auto;
           max-width: 100%;
           max-height: none;
+        }
+      }
+      @media @tablet {
+        a.logo {
+          img {
+            margin: 20px auto 10px;
+            height: 65px;
+          }
+        }
+      }
+      @media @normal {
+        a.logo {
+          img {
+            margin: 30px auto 10px;
+            height: 95px;
+          }
         }
       }
 
       .navbar-toggle {
         // navbar toggle with burger
         float: right;
-        margin: 40px 0 0;
+        margin: 0;
         padding: 5px 10px;
         background: none;
 
         &:hover {
           color: #fff;
-          background-color: @pxl-color-blue;
+          background-color: @pxl-color-gold;
         }
       }
 
-      @media @tablet {
-        text-align: center;
-        a.logo {
-          padding: 0 @grid-gutter-width / 2;
-          img {
-            width: 120px;
-          }
-        }
-      }
-      @media @normal {
-        margin-bottom: -58px;
-        a.logo {
-          img {
-            width: 163px;
-          }
-        }
-      }
     }
 
     // collapse part
     .navbar-collapse {
       padding: 10px 0;
-      border-bottom: 1px solid @gray-lighter;
       background: #fff none;
 
       nav {
@@ -131,164 +97,78 @@ header#navbar {
         ul.menu {
           display: inline-block;
           float: none;
-          margin: 0;
-          padding: 10px 0;
+          margin: 0 auto;
+          padding: 0;
           width: 100%;
 
-          li {
+          >li {
             display: inline-block;
             float: none;
+            padding: 0;
 
             a, span {
               cursor: pointer;
               display: inline-block;
-              padding: 10px 15px;
+              padding: 3px 5px 0;
               font-family: @pxl-text-font-bold;
               font-size: @font-size-smaller;
               line-height: 1;
-              text-transform: uppercase;
-              color: @text-color;
+              letter-spacing: 1px;
+              color: @pxl-color-gold;
               outline: none;
-
-              &.menu-participate {
-                letter-spacing: 1.5px;
-                color: #fff;
-                border-radius: @border-radius-base;
-                border: 1px solid darken(@pxl-color-blue, 5%);
-                background-color: @pxl-color-blue;
-              }
+              border-right: 1px solid @pxl-color-gold;
 
               &:hover,
               &.active,
               &.checked {
-                color: @pxl-color-blue;
+                color: @pxl-color-orange;
                 background: none;
               }
             }
-          }
-
-          &.secondary {
-            body.not-front & {
-              // hide filters except for front page (grid)
-              display: none;
+            &.last a,span {
+              border-right: none;
             }
 
+          }
+        }
+      }
+      @media @narrow {
+        nav {
+          ul.menu {
             li {
-              padding-right: 6px;
-
-              &.last {
-                padding: 0;
-              }
-
-              span {
-                padding: 10px 0;
-
-                &.menu-caret {
-                  display: inline-block;
-                  position: relative;
-                  padding: 0;
-                  width: 20px;
-                  height: 10px;
-
-                  .left, .right, .cross {
-                    position: absolute;
-                    top: 0;
-                    left: 7%;
-                    width: 50%;
-                    height: 10px;
-                    opacity: 1.0;
-                    background: transparent url(../images/arrow_l.svg) 0 0/contain no-repeat;
-                    #pxl-mixins.transition(transform 0.4s linear);
-                    #pxl-mixins.transition(opacity 0.4s ease 0.4s);
-                  }
-                  .right {
-                    left: 43%;
-                    background: transparent url(../images/arrow_r.svg) 0 0/contain no-repeat;
-                  }
-                  .cross {
-                    left: 25%;
-                    background: transparent url(../images/cross.svg) 0 0/contain no-repeat;
-                    opacity: 0.0;
-                  }
-                }
-              }
-
-              // animations
-              &.active span.menu-caret .left {
-                #pxl-mixins.translateX(72%);
-              }
-              &.active span.menu-caret .right {
-                #pxl-mixins.translateX(-72%);
-              }
-              &.checked span.menu-caret .left {
-                  #pxl-mixins.translateX(36%);
-                  opacity: 0.0;
-              }
-              &.checked span.menu-caret .right {
-                  #pxl-mixins.translateX(-36%);
-                  opacity: 0.0;
-              }
-              &.checked span.menu-caret .cross {
-                opacity: 1.0;
+              a, span {
+                padding: 3px 10px 0;
+                font-size: @font-size-small;
               }
             }
           }
         }
       }
-
       @media @tablet {
-        padding: 10px @grid-gutter-width / 2;
         nav {
           ul.menu {
-            float: left;
-            width: auto;
             li {
               a, span {
-                font-size: 17px;
-              }
-            }
-            &.secondary {
-              float: right;
-              li {
-                padding-right: 10px;
+                padding: 3px 15px 0;
+                font-size: 18px;
               }
             }
           }
         }
       }
       @media @normal {
-        padding: 10px 0;
-        border-color: transparent;
         nav {
           ul.menu {
-            padding: 0;
+            li {
+              a, span {
+                padding: 3px 15px 0;
+                font-size: @font-size-large;
+              }
+            }
           }
         }
 
       }
-
-    }
-  }
-
-  .navbar-exposed-form {
-    display: none;
-    position: relative;
-    top: @pxl-nav-exposed-sm-top;
-    border-bottom: 1px solid @pxl-color-border;
-    background: #fff none;
-    #pxl-mixins.box-shadow(0 3px 5px -2px gray);
-    #pxl-mixins.box-shadow(0 3px 5px -2px gray inset);
-    z-index: -1;
-
-    @media @tablet {
-      top: @pxl-nav-exposed-md-top;
-    }
-    @media @normal {
-      top: 0;
-    }
-
-    > .container {
-      background: transparent none;
     }
   }
 }

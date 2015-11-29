@@ -28,7 +28,7 @@
   }
 
   span.form-required {
-    color: @pxl-color-blue;
+    color: @pxl-color-orange;
   }
 }
 
@@ -112,7 +112,7 @@
           font-size: @pxl-min-font-size;
           letter-spacing: 1.1px;
           text-align: left;
-          color: @pxl-color-blue;
+          color: @text-color;
           box-shadow: none;
           #pxl-mixins.border-radius(@border-radius-base);
           border: 1px solid @pxl-color-border;
@@ -127,7 +127,7 @@
         input:focus,
         textarea:focus {
           border: 1px solid @pxl-color-border-active;
-          .box-shadow(0 0 3px @pxl-color-blue);
+          .box-shadow(0 0 3px @pxl-color-orange);
         }
 
         .form-textarea-wrapper {
@@ -157,7 +157,7 @@
           }
 
           button.btn {
-            .resp-submit-button(#fff, @pxl-color-red);
+            .resp-submit-button(#fff, @pxl-color-orange);
             margin: 0 1%;
             vertical-align: baseline;
 
@@ -200,7 +200,7 @@
 
       div.form-actions {
         button.webform-submit {
-          .resp-submit-button(#fff, @pxl-color-blue);
+          .resp-submit-button(#fff, @pxl-color-orange);
         }
       }
     }
@@ -261,7 +261,7 @@
             height: @newsletter-height;
           }
           input:focus {
-            .box-shadow(0 0 3px @pxl-color-blue inset);
+            .box-shadow(0 0 3px @pxl-color-orange inset);
           }
 
           &.webform-component--e-mail {

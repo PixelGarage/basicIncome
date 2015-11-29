@@ -20,10 +20,10 @@
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
-@pxl-color-blue: #0054bf; //#0070d3;
-@pxl-color-red: #eb0028;
+@pxl-color-orange: #ff3300;
+@pxl-color-gold: #996633;
 @pxl-color-border: #ddd;
-@pxl-color-border-active: #3fa9e5;
+@pxl-color-border-active: @pxl-color-orange;
 
 
 //== Scaffolding
@@ -40,7 +40,7 @@
 //** Global textual link color.
 @link-color:            @text-color;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      @pxl-color-blue;
+@link-hover-color:      @pxl-color-orange;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -215,7 +215,7 @@
 @grid-gutter-width:         30px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
-@grid-float-breakpoint:     @screen-md-min;
+@grid-float-breakpoint:     0;
 //** Point at which the navbar begins collapsing.
 @grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
 
@@ -476,11 +476,11 @@
 @pagination-bg:                        transparent;
 @pagination-border:                    transparent;
 
-@pagination-hover-color:               @pxl-color-blue;
+@pagination-hover-color:               @pxl-color-orange;
 @pagination-hover-bg:                  transparent;
 @pagination-hover-border:              transparent;
 
-@pagination-active-color:              @pxl-color-blue;
+@pagination-active-color:              @pxl-color-orange;
 @pagination-active-bg:                 transparent;
 @pagination-active-border:             transparent;
 
