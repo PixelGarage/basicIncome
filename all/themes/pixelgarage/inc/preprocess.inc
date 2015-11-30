@@ -33,15 +33,17 @@ function pixelgarage_preprocess_page(&$vars) {
 function pixelgarage_preprocess_webform_confirmation(&$vars) {
   // because we have translated webform nodes, we have to get the submissions
   // of the original node of the translation set, set in the "tnid" property
+  if (!isset($vars['node']) || !isset($vars['sid'])) return;
+
   $webform = $vars['node'];
-  if ($webform->tnid != 18 || empty($vars['sid'])) return;
+  $tnid = $webform->tnid ? $webform->tnid : $webform->nid;
+  $orig_form = node_load($tnid);
 
-  $submissions = webform_get_submissions(array('nid' => $webform->tnid, 'sid' => $vars['sid']));
+  $submissions = webform_get_submissions(array('nid' => $tnid, 'sid' => $vars['sid']));
   $submission = $submissions[$vars['sid']];
-  $node = node_load($webform->tnid); // use only master webform for publishing flag
 
-  // create a new NEBS posting node
-  $status = (!empty($node->field_publish_post_immediately) && $node->field_publish_post_immediately[LANGUAGE_NONE][0]['value'] == 1) ? 1 : 0;
+  // create a new posting node
+  $status = (!empty($orig_form->field_publish_post_immediately) && $orig_form->field_publish_post_immediately[LANGUAGE_NONE][0]['value'] == 1) ? 1 : 0;
   $post = new stdClass();
   $post->type = 'post';
   $post->language = LANGUAGE_NONE;
@@ -52,34 +54,17 @@ function pixelgarage_preprocess_webform_confirmation(&$vars) {
   node_object_prepare($post);
 
 // fill the node properties and save it to the database
-  $post->title = $submission->data[4][0] . " & " . $submission->data[6][0];
-  $post->field_image[$post->language][0]['fid'] = $submission->data[1][0]; // fid
+  $post->title = $submission->data[4][0] . ", " . $submission->data[13][0];
   $post->field_e_mail[$post->language][0]['email'] = $submission->data[2][0]; // email
-  $post->field_name[$post->language][0]['value'] = $submission->data[4][0]; // Name left
-  $post->field_name_2[$post->language][0]['value'] = $submission->data[6][0]; // Name right
+  $post->field_name[$post->language][0]['value'] = $submission->data[4][0]; // Name(s)
+  $post->field_plz[$post->language][0]['value'] = (isset($submission->data[12])) ? $submission->data[12] : '#ext'; // PLZ
+  $post->field_city[$post->language][0]['value'] = $submission->data[13][0]; // City
+  $post->field_category[$post->language][0]['tid'] = $submission->data[11][0]; // Category
+  $post->field_image[$post->language][0]['fid'] = $submission->data[1][0]; // fid
   $post->field_quote[$post->language][0]['value'] = substr($submission->data[5][0], 0, 70); // Quote
-  $post->field_canton[$post->language][0]['tid'] = _pixelgarage_convert_taxonomy('cantons', $submission->data[7][0]); // Canton
 
   $post = node_submit($post);
   node_save($post);
 
 }
 
-function _pixelgarage_convert_taxonomy($taxonomy, $short) {
-  // converts term shortcut to term id
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'taxonomy_term')
-    ->entityCondition('bundle', $taxonomy)
-    ->fieldCondition('field_shortcut', 'value', strtoupper($short))
-    ->range(0, 1);
-  $result = $query->execute();
-  if ($result && $result['taxonomy_term']) {
-    // term exists
-    foreach ($result['taxonomy_term'] as $key => $value) {
-      return $key;
-    }
-
-  }
-
-  return 0;
-}
