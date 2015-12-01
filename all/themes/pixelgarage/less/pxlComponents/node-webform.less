@@ -107,6 +107,7 @@
         }
 
         input, textarea {
+          padding: 2px 10px 0;
           height: auto;
           font-family: @pxl-text-font;
           font-size: @pxl-min-font-size;
@@ -148,7 +149,6 @@
             position: relative;
             float: none;
             padding: 0.3em;
-            width: auto;
             width: 70%;
             text-align: left;
             border: none;
@@ -185,12 +185,18 @@
         &.webform-container-inline {
           position: relative;
 
-          label {
-            display: block;
+          &.webform-component-radios {
+            label {
+              display: block;
 
-            @media @narrow {
-              display: inline-block;
+              @media @narrow {
+                display: inline-block;
+              }
             }
+          }
+
+          label {
+            display: inline-block;
           }
 
           input {

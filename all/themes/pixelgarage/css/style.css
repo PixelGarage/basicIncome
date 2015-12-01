@@ -9358,6 +9358,7 @@ form#user-login {
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component input,
 .node-webform div.col-sm-12 form.webform-client-form .webform-component textarea {
+  padding: 2px 10px 0;
   height: auto;
   font-family: 'UniversLight', sans-serif;
   font-size: 11px;
@@ -9405,7 +9406,6 @@ form#user-login {
   position: relative;
   float: none;
   padding: 0.3em;
-  width: auto;
   width: 70%;
   text-align: left;
   border: none;
@@ -9459,13 +9459,16 @@ form#user-login {
 .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline {
   position: relative;
 }
-.node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline label {
+.node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline.webform-component-radios label {
   display: block;
 }
 @media screen and (min-width: 480px) {
-  .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline label {
+  .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline.webform-component-radios label {
     display: inline-block;
   }
+}
+.node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline label {
+  display: inline-block;
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline input {
   display: inline-block;
