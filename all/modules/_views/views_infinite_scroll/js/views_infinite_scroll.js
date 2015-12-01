@@ -24,7 +24,7 @@ Drupal.behaviors.views_infinite_scroll = {
             var view_selector    = 'div.view-id-' + settings.view_name + '.view-display-id-' + settings.display;
             var content_selector = view_selector + ' > ' + settings.content_selector;
             var items_selector   = content_selector + ' ' + settings.items_selector;
-            var pager_selector   = view_selector + ' > div.item-list ' + settings.pager_selector;
+            var pager_selector   = view_selector + ' ' + settings.pager_selector;
             var next_selector    = view_selector + ' ' + settings.next_selector;
             var img_location     = view_selector + ' > div.view-content';
             var img_path         = settings.img_path;
@@ -45,18 +45,14 @@ Drupal.behaviors.views_infinite_scroll = {
             });
 
             // Trigger autoload if content height is less than doc height already
-            var prev_content_height = $(content_selector).height();
-            do {
+            $(document).off(".ininite");
+            $(document).on("scroll.ininite", function() {
               var last = $(items_selector).filter(':last');
               if(last.offset().top + last.height() < $(document).scrollTop() + $(window).height()) {
-                last = $(items_selector).filter(':last');
                 handle.autopager('load');
               }
-              else {
-                break;
-              }
-            }
-            while ($(content_selector).height() > prev_content_height);
+            });
+            $(document).trigger('scroll');
 
           }
           else {  
