@@ -47,6 +47,20 @@ function pixelgarage_preprocess_page(&$vars) {
   }
 }
 
+function pixelgarage_preprocess_views_exposed_form(&$vars) {
+  $view = views_get_page_view();
+  $vars['total_rows'] = null;
+
+  if (empty($vars['form']['combine']['#value'])) return;
+
+  $page_total = count($view->result);
+  if(isset($view->total_rows)){
+    $vars['total_rows'] = $view->total_rows;
+  } else {
+    $vars['total_rows'] = $page_total;
+  }
+}
+
 /**
  * Implements template_preprocess_webform_confirmation().
  */

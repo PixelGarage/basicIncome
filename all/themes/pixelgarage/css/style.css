@@ -10080,6 +10080,26 @@ form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-expo
   color: #ff5500;
   background: none;
 }
+form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-total-rows {
+  height: 24px;
+  padding: 3px 0 0 10px;
+  font-family: 'UniversLight', sans-serif;
+  font-size: 12px;
+}
+@media screen and (min-width: 480px) {
+  form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-total-rows {
+    padding: 6px 0 0 10px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-total-rows {
+    padding: 6px 0 0 10px;
+    height: 32px;
+    font-size: 17px;
+  }
+}
 /*
  *  Header section (navigation)
  * --------------------------------------------------*/
