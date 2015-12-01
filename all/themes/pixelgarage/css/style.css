@@ -9987,16 +9987,16 @@ form#views-exposed-form-post-grid-page-clickcard .views-exposed-form {
 }
 form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-exposed-widgets {
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 10px 0 0;
 }
 @media screen and (min-width: 480px) {
   form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-exposed-widgets {
-    padding: 20px 0 10px;
+    padding: 20px 0 0;
   }
 }
 @media screen and (min-width: 1024px) {
   form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-exposed-widgets {
-    padding: 30px 0 10px;
+    padding: 30px 0 0;
   }
 }
 form#views-exposed-form-post-grid-page-clickcard .views-exposed-form .views-exposed-widgets .views-exposed-widget {
@@ -10144,7 +10144,7 @@ header#navbar .navbar-top-container > .container .navbar-header .navbar-toggle:h
   background-color: #996633;
 }
 header#navbar .navbar-top-container > .container .navbar-collapse {
-  padding: 0;
+  padding: 5px 0;
   background: #fff none;
 }
 header#navbar .navbar-top-container > .container .navbar-collapse nav {
@@ -10192,7 +10192,7 @@ header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu > 
 }
 @media screen and (min-width: 480px) {
   header#navbar .navbar-top-container > .container .navbar-collapse {
-    padding: 5px 0 0;
+    padding: 5px 0;
   }
   header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu li a,
   header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu li span {
@@ -10202,7 +10202,7 @@ header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu > 
 }
 @media screen and (min-width: 768px) {
   header#navbar .navbar-top-container > .container .navbar-collapse {
-    padding: 10px 0 0;
+    padding: 10px 0;
   }
   header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu li a,
   header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu li span {
@@ -10212,7 +10212,7 @@ header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu > 
 }
 @media screen and (min-width: 1024px) {
   header#navbar .navbar-top-container > .container .navbar-collapse {
-    padding: 15px 0 0;
+    padding: 15px 0;
   }
   header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu li a,
   header#navbar .navbar-top-container > .container .navbar-collapse nav ul.menu li span {
@@ -10245,7 +10245,7 @@ body.navbar-is-fixed-top.admin-menu {
     padding-top: 148px !important;
   }
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
   body.navbar-is-fixed-top {
     padding-top: 190px !important;
   }
@@ -10259,6 +10259,36 @@ body.navbar-is-fixed-top.admin-menu {
   }
   body.navbar-is-fixed-top.admin-menu {
     padding-top: 248px !important;
+  }
+}
+body.not-front.navbar-is-fixed-top {
+  padding-top: 95px !important;
+}
+body.not-front.navbar-is-fixed-top.admin-menu {
+  padding-top: 95px !important;
+}
+@media screen and (min-width: 480px) {
+  body.not-front.navbar-is-fixed-top {
+    padding-top: 100px !important;
+  }
+  body.not-front.navbar-is-fixed-top.admin-menu {
+    padding-top: 100px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  body.not-front.navbar-is-fixed-top {
+    padding-top: 142px !important;
+  }
+  body.not-front.navbar-is-fixed-top.admin-menu {
+    padding-top: 142px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  body.not-front.navbar-is-fixed-top {
+    padding-top: 186px !important;
+  }
+  body.not-front.navbar-is-fixed-top.admin-menu {
+    padding-top: 186px !important;
   }
 }
 body .main-container #page-header .region-header h2.block-title {
