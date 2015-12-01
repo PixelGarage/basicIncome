@@ -7,7 +7,9 @@
 @ss-font-path: "@{pxl-font-path}/ss-social";
 @ss-sub-font: "Circle"; // supported sub-fonts are "Circle" and "Regular"
 @ss-sub-font-hover: "Regular";
-@pxl-share-color: #fff;
+
+@pxl-share-color: @text-color;
+@pxl-share-align: left;
 @pxl-follow-color: @pxl-color-gold;
 
 
@@ -60,7 +62,7 @@
 }
 .sharethis-wrapper {
   margin: 0;
-  text-align: right;
+  text-align: @pxl-share-align;
 
   > span .stButton {
     margin: 0;

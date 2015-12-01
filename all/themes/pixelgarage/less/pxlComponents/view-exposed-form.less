@@ -8,138 +8,102 @@
 
 // Mixins
 // -------------------------
-.checkbox-size(@pxl-check-gutter: 10%) {
-  margin: 0 @pxl-check-gutter/2;
-  padding-bottom: 100% - @pxl-check-gutter; // square
-  height: 0;
-}
 
-.pxl-checkbox(@icon-width: 60%; @icon-y-shift: 0; @img-border-color: @pxl-color-border) {
-  display: inline-block;
-  margin: 5px 0;
-  width: 100% / 13;
-  min-width: 53px;
-  vertical-align: top;
-
-  .form-item {
-    position: relative;
-    .checkbox-size;
-    border: 1px solid @pxl-color-border;
-
-    input {
-      display: none;
-    }
-
-    label {
-      display: block;
-      width: 100%;
-      height: 100%;
-      font-weight: normal;
-
-      > img {
-        position: absolute;
-        left: 0;
-        top: @icon-y-shift;
-        #pxl-mixins.translateY(-50%);
-        margin: 0 (100% - @icon-width)/2;
-        width: @icon-width;
-        height: auto;
-        border: 1px solid @img-border-color;
-      }
-
-      > div {
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        #pxl-mixins.translateX(-50%);
-      }
-    }
-  }
-
-  &.selected .form-item  {
-    border: 1px solid @pxl-color-border-active;
-    .box-shadow(0 0 3px @pxl-color-orange);
-  }
-}
 
 // Main settings
 // -------------------------
-form#views-exposed-form-europa-page-europe {
+form#views-exposed-form-post-grid-page-clickcard {
   .views-exposed-form {
-    padding: @grid-gutter-width/2 0;
-
-    @media @tablet {
-      padding: 20px 0 @grid-gutter-width/2;
-    }
-    @media @normal {
-      padding: 35px 0 @grid-gutter-width/2;
-    }
+    padding: 0;
+    width: 100%;
 
     .views-exposed-widgets {
-      margin: 0;
+      margin: 0 auto;
+      padding: 10px 0;
+
+      @media @narrow {
+        padding: 20px 0 10px;
+      }
+      @media @normal {
+        padding: 30px 0 10px;
+      }
 
       .views-exposed-widget {
+        display: inline-block;
         float: none;
         padding: 0;
+        vertical-align: top;
+        text-align: center;
 
-        &.views-widget-filter-field_canton_tid,
-        &.views-widget-filter-field_party_tid {
+        &.views-widget-filter-combine {
           > label {
             display: none;
           }
 
           .views-widget {
-            .pxl-checkboxes {
-              overflow-x: auto;
-              padding: 5px 0;
-              width: 100%;
-              white-space: nowrap;
-              text-align: left;
-              font-size: @pxl-min-font-size;
-              border: 1px solid @pxl-color-border;
+            .form-item {
+              input.form-text {
+                height: 24px;
+                max-width: 200px;
+                font-family: @pxl-text-font-light;
+                font-size: 12px;
+                #pxl-mixins.border-radius(@border-radius-base);
+                .border-right-radius(0);
+                border: 1px solid @pxl-color-orange;
 
-              @media @tablet {
-                padding: 0;
-                white-space: normal;
-                text-align: center;
-                border: none;
-              }
-              @media @normal {
-                font-size: @font-size-small;
-              }
+                &:focus {
+                  #pxl-mixins.box-shadow(0 0 2px @pxl-color-orange inset);
+                }
 
-              .pxl-checkbox{
-                .pxl-checkbox(90%, 40%, none);
-              }
-            }
-          }
-        }
-
-        &.views-widget-filter-field_canton_tid {
-          .views-widget {
-            .pxl-checkboxes {
-              .pxl-checkbox{
-                .pxl-checkbox(60%, 40%);
+                @media @narrow {
+                  height: 28px;
+                  font-size: 14px;
+                }
+                @media @normal {
+                  height: 32px;
+                  font-size: 17px;
+                }
               }
             }
           }
         }
 
         &.views-submit-button {
-          display: block;
-          text-align: right;
-          margin: 0;
-          padding: 10px 0 0;
-
-          @media @tablet {
-            padding: 20px 0 10px;
-          }
-          @media @normal {
-            padding: 35px 0 25px;
-          }
+          margin: 0 0 0 -4px;
+          padding: 0;
 
           button {
-            #pxl-mixins.submit-button(#fff, @pxl-color-orange);
+            display: inline-block;
+            margin: 0;
+            padding: 3px 10px 0;
+            height: 24px;
+            font-family: @pxl-text-font-bold;
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #fff;
+            outline: none;
+            #pxl-mixins.border-radius(@border-radius-base);
+            .border-left-radius(0);
+            border: 1px solid @pxl-color-orange;
+            background-color: @pxl-color-orange;
+
+            @media @narrow {
+              padding: 4px 12px 0;
+              height: 28px;
+              font-size: 14px;
+            }
+            @media @normal {
+              padding: 6px 15px 0;
+              height: 32px;
+              font-size: 17px;
+            }
+
+            &:hover {
+              color: @pxl-color-orange;
+              background: none;
+            }
           }
         }
 

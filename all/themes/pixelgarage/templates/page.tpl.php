@@ -169,7 +169,9 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <!-- Main content -->
-      <?php print render($page['content']); ?>
+      <div <?php print $post_category_class; ?>>
+        <?php print render($page['content']); ?>
+      </div>
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>

@@ -12,6 +12,8 @@
    */
   Drupal.behaviors.addHeaderShadow = {
     attach: function (context) {
+      var isFixedHeader = true;
+
       $(window).off("scroll");
       $(window).on("scroll", function () {
         var $header              = $("header.navbar"),
@@ -29,24 +31,31 @@
           fixedHeaderScrollPos = 60;
         }
 
-        if ($(window).scrollTop() > fixedHeaderScrollPos) {
+        if ($(window).scrollTop() >= fixedHeaderScrollPos) {
+          if (isFixedHeader) return;
+
           // keep header fixed at this scroll position
-          $header.css({position: 'fixed', top: -fixedHeaderScrollPos + 'px'});
           $header.removeClass('navbar-static-top').addClass('navbar-fixed-top');
           $('body').removeClass('navbar-is-static-top').addClass('navbar-is-fixed-top');
 
-          // add shadow to header
+          // fix header and add shadow
+          $header.css({position: 'fixed', top: -fixedHeaderScrollPos + 'px'});
           $headerCont.css("box-shadow", "0 4px 3px -4px gray");
 
+          isFixedHeader = true;
         }
         else {
+          if (!isFixedHeader) return;
+
           // set header to static in top scroll region
-          $header.css({position: 'static', top: 'auto'});
           $header.removeClass('navbar-fixed-top').addClass('navbar-static-top');
           $('body').removeClass('navbar-is-fixed-top').addClass('navbar-is-static-top');
 
-          // remove shadow to header
+          // remove shadow from header
+          $header.css({position: 'static', top: 'auto'});
           $headerCont.css("box-shadow", "none");
+
+          isFixedHeader = false;
         }
       });
     }
@@ -90,7 +99,6 @@
   /**
    * Toggles menu and exposed filter pane when main area and toggle button is clicked
    * (only when toggle button is visible).
-   */
   Drupal.behaviors.toggleMenu = {
     attach: function () {
       var $exposedForm    = $('header#navbar .navbar-exposed-form'),
@@ -114,11 +122,11 @@
       });
     }
   };
+   */
 
   /**
    * Implements the active state of the filter menus and opens or closes the filter section
    * according to the menu state.
-   */
   Drupal.behaviors.activateFilterMenus = {
     attach: function () {
       var $exposedForm   = $('header#navbar .navbar-exposed-form'),
@@ -177,10 +185,10 @@
       });
     }
   };
+   */
 
   /**
    * Implements the checkbox state for all checkboxes and updates the corresponding menu checked state.
-   */
   Drupal.behaviors.checkFilters = {
     attach: function () {
       var $cantonCheckboxes    = $('#edit-field-canton-tid-wrapper .pxl-checkbox'),
@@ -270,10 +278,10 @@
 
     }
   };
+   */
 
   /**
    * Resets the selected filters.
-   */
   Drupal.behaviors.resetFilters = {
     attach: function () {
       var $cantonCheckboxes     = $('#edit-field-canton-tid-wrapper .pxl-checkbox'),
@@ -356,6 +364,7 @@
       });
     }
   };
+   */
 
 
 })(jQuery);

@@ -88,7 +88,7 @@ header#navbar {
 
     // collapse part
     .navbar-collapse {
-      padding: 10px 0;
+      padding: 0;
       background: #fff none;
 
       nav {
@@ -100,18 +100,20 @@ header#navbar {
           margin: 0 auto;
           padding: 0;
           width: 100%;
+          line-height: 1;
 
           >li {
             display: inline-block;
             float: none;
             padding: 0;
+            line-height: 1;
 
             a, span {
               cursor: pointer;
               display: inline-block;
               padding: 3px 5px 0;
               font-family: @pxl-text-font-bold;
-              font-size: @font-size-smaller;
+              font-size: 11px;
               line-height: 1;
               letter-spacing: 1px;
               color: @pxl-color-gold;
@@ -133,6 +135,7 @@ header#navbar {
         }
       }
       @media @narrow {
+        padding: 5px 0 0;
         nav {
           ul.menu {
             li {
@@ -145,6 +148,7 @@ header#navbar {
         }
       }
       @media @tablet {
+        padding: 10px 0 0;
         nav {
           ul.menu {
             li {
@@ -157,6 +161,7 @@ header#navbar {
         }
       }
       @media @normal {
+        padding: 15px 0 0;
         nav {
           ul.menu {
             li {

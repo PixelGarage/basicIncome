@@ -1,63 +1,33 @@
 /*
- *  Node NEBS-post component
+ *  Node post component
  * --------------------------------------------------*/
 
 // Variables
 // -------------------------
 @pxl-text-color-back: #fff;
 @pxl-padding-card-back: 15px;
-@pxl-name-field-bg-color-left: #94804D;
-@pxl-name-field-bg-color-right: #E37C1E;
+@pxl-name-field-bg-color-left: @pxl-color-orange;
+@pxl-name-field-bg-color-right: @pxl-color-orange;
 @pxl-name-field-color: #fff;
 
 
 // Mixins
 // -------------------------
-.party-icon() {
-  & {background: url('../images/other.svg') no-repeat left center / contain;}
-  .BDP & {background: url('../images/bdp.svg') no-repeat left center / contain;}
-  .CSP & {background: url('../images/csp.svg') no-repeat left center / contain;}
-  .CVP & {background: url('../images/cvp.svg') no-repeat left center / contain;}
-  .EVP & {background: url('../images/evp.svg') no-repeat left center / contain;}
-  .FDP & {background: url('../images/fdp.svg') no-repeat left center / contain;}
-  .GLP & {background: url('../images/glp.svg') no-repeat left center / contain;}
-  .GPS & {background: url('../images/gps.svg') no-repeat left center / contain;}
-  .SPS & {background: url('../images/sps.svg') no-repeat left center / contain;}
-  .SVP & {background: url('../images/svp.svg') no-repeat left center / contain;}
-}
+.category-icon() {
+  .i18n-de .image-me & { background: #fff url('../images/d_ich.svg') no-repeat center bottom/contain; }
+  .i18n-de .image-you & { background: #fff url('../images/d_du.svg') no-repeat center bottom/contain; }
+  .i18n-de .image-we & { background: #fff url('../images/d_wir.svg') no-repeat center bottom/contain; }
+  .i18n-de .image-you-all & { background: #fff url('../images/d_ihr.svg') no-repeat center bottom/contain; }
 
-.canton-icon() {
-  & {background: #fff url('../images/logo_de.svg') no-repeat left center / 100% 100%;}
+  .i18n-en .image-me & { background: #fff url('../images/e_ich.svg') no-repeat center bottom/contain; }
+  .i18n-en .image-you & { background: #fff url('../images/e_du.svg') no-repeat center bottom/contain; }
+  .i18n-en .image-we & { background: #fff url('../images/e_wir.svg') no-repeat center bottom/contain; }
+  .i18n-en .image-you-all & { background: #fff url('../images/e_ihr.svg') no-repeat center bottom/contain; }
 
-  .i18n-fr & {
-    background: #fff url('../images/logo_fr.svg') no-repeat left center / 100% 100%;
-  }
-  .AG & { background: #fff url('../images/ag.svg') no-repeat left center / 100% 100%;}
-  .AR & { background: #fff url('../images/ar.svg') no-repeat left center / 100% 100%;}
-  .AI & { background: #fff url('../images/ai.svg') no-repeat left center / 100% 100%;}
-  .BS & { background: #fff url('../images/bs.svg') no-repeat left center / 100% 100%;}
-  .BL & { background: #fff url('../images/bl.svg') no-repeat left center / 100% 100%;}
-  .BE & { background: #fff url('../images/be.svg') no-repeat left center / 100% 100%;}
-  .FR & { background: #fff url('../images/fr.svg') no-repeat left center / 100% 100%;}
-  .GE & { background: #fff url('../images/ge.svg') no-repeat left center / 100% 100%;}
-  .GL & { background: #fff url('../images/gl.svg') no-repeat left center / 100% 100%;}
-  .GR & { background: #fff url('../images/gr.svg') no-repeat left center / 100% 100%;}
-  .JU & { background: #fff url('../images/ju.svg') no-repeat left center / 100% 100%;}
-  .LU & { background: #fff url('../images/lu.svg') no-repeat left center / 100% 100%;}
-  .NE & { background: #fff url('../images/ne.svg') no-repeat left center / 100% 100%;}
-  .NW & { background: #fff url('../images/nw.svg') no-repeat left center / 100% 100%;}
-  .OW & { background: #fff url('../images/ow.svg') no-repeat left center / 100% 100%;}
-  .SH & { background: #fff url('../images/sh.svg') no-repeat left center / 100% 100%;}
-  .SZ & { background: #fff url('../images/sz.svg') no-repeat left center / 100% 100%;}
-  .SO & { background: #fff url('../images/so.svg') no-repeat left center / 100% 100%;}
-  .SG & { background: #fff url('../images/sg.svg') no-repeat left center / 100% 100%;}
-  .TI & { background: #fff url('../images/ti.svg') no-repeat left center / 100% 100%;}
-  .TG & { background: #fff url('../images/tg.svg') no-repeat left center / 100% 100%;}
-  .UR & { background: #fff url('../images/ur.svg') no-repeat left center / 100% 100%;}
-  .VD & { background: #fff url('../images/vd.svg') no-repeat left center / 100% 100%;}
-  .VS & { background: #fff url('../images/vs.svg') no-repeat left center / 100% 100%;}
-  .ZG & { background: #fff url('../images/zg.svg') no-repeat left center / 100% 100%;}
-  .ZH & { background: #fff url('../images/zh.svg') no-repeat left center / 100% 100%;}
+  .i18n-fr .image-me & { background: #fff url('../images/f_ich.svg') no-repeat center bottom/contain; }
+  .i18n-fr .image-you & { background: #fff url('../images/f_du.svg') no-repeat center bottom/contain; }
+  .i18n-fr .image-we & { background: #fff url('../images/f_wir.svg') no-repeat center bottom/contain; }
+  .i18n-fr .image-you-all & { background: #fff url('../images/f_ihr.svg') no-repeat center bottom/contain; }
 }
 
 
@@ -68,23 +38,11 @@
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 
   // Front of card
   &.view-mode-front {
-    background: url("../images/bg_box_01_d.svg") no-repeat center bottom/contain;
-
-    .views-row-even & {
-      background: url("../images/bg_box_02_d.svg") no-repeat center bottom/contain;
-    }
-
-    body.i18n-fr & {
-      background: url("../images/bg_box_01_f.svg") no-repeat center bottom/contain;
-    }
-    body.i18n-fr .views-row-even & {
-      background: url("../images/bg_box_02_f.svg") no-repeat center bottom/contain;
-    }
-
+    .category-icon;
 
     div.row {
       margin: 0;
@@ -96,51 +54,43 @@
 
         .field-name-field-name {
           position: absolute;
-          top: 55%;
-          left: -5%;
-          height: auto;
-          padding: 0.2em 1em 0.065em;
+          top: 56.9%;
+          left: -2%;
+          padding: 0.2em 1em 0;
+          width: auto;
+          font-family: @pxl-text-font-light;
+          font-size: 16px;
           text-transform: uppercase;
           text-align: center;
-          line-height: 1;
+          letter-spacing: 1px;
+          line-height: 1.2em;
+          color: @pxl-name-field-color;
           background-color: @pxl-name-field-bg-color-left;
-          color: @pxl-name-field-color;
         }
-
-        /*
-          .field-name-field-name-2 {
-          position: absolute;
-          top: 47%;
-          right: 8%;
-          height: auto;
-          padding: 0.2em 1em 0.065em;
-          text-transform: uppercase;
-          text-align: center;
-          line-height: 1;
-          background-color: @pxl-name-field-bg-color-right;
-          color: @pxl-name-field-color;
-        }
-        */
 
         .field-name-field-image {
           img {
+            width: 100%;
+            height: auto;
           }
         }
 
         .field-name-field-quote {
           position: absolute;
-          top: 68.9%;
+          overflow: hidden;
+          top: 73%;
           right: 0;
-          width: 50%;
+          width: 54%;
           height: auto;
+          line-height: 16px;
           #pxl-mixins.hyphenate(auto);
 
           .field-item {
             font-family: @pxl-text-font-light;
-            font-size: 5vw;
+            font-size: 14px;
 
             @media @narrow {
-              font-size: 3vw;
+              font-size: 14px;
             }
             @media @tablet {
               font-size: 15px;
@@ -148,10 +98,6 @@
             @media @normal {
               font-size: 15px;
             }
-            @media @wide {
-              font-size: 17px;
-            }
-
           }
         }
       }
@@ -225,34 +171,6 @@
 
         .group-icon-section {
           padding: @pxl-padding-card-back 0;
-
-          .field-name-field-canton {
-            display: inline-block;
-            margin-right: @pxl-padding-card-back;
-            width: 25%;
-
-            .field-item {
-              padding-bottom: 100%;
-              width: 100%;
-              height: 0;
-              text-indent: 9999px;
-              border-left: 1px solid #fff;
-              border-right: 1px solid #fff;
-              .canton-icon();
-            }
-          }
-          .field-name-field-party {
-            display: inline-block;
-            width: 50%;
-
-            .field-item {
-              padding-bottom: 50%;
-              width: 100%;
-              height: 0;
-              text-indent: 9999px;
-              .party-icon();
-            }
-          }
         }
 
         .group-share-section {
@@ -261,25 +179,6 @@
           left: 0;
           padding: @pxl-padding-card-back @pxl-padding-card-back 0;
           width: 100%;
-
-          .field-name-nebs-logo {
-            width: 100%;
-
-            .field-item {
-              text-align: right;
-              border-bottom: 3px solid @pxl-text-color-back;
-
-              a {
-                outline: none;
-                img {
-                  display: inline-block;
-                  width: 24%;
-                  height: auto;
-                }
-              }
-            }
-
-          }
 
           .sharethis-buttons {
             padding-top: 10px;
@@ -296,14 +195,14 @@
 //
 .node-post.view-mode-full {
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   width: 100%;
 
+  @media @narrow {
+    width: 50%;
+  }
   @media @tablet {
     width: 75%;
-  }
-  @media @wide {
-    width: 50%;
   }
 
   div.row {
@@ -311,21 +210,17 @@
     height: 100%;
 
     div.col-sm-6 {
-      padding: 10px;
+      padding: 30px 0 0;
       margin: 0;
 
 
       &.left-region {
-        padding-bottom: 150%;
+        padding-bottom: 144.82%; // 420/290
         height: 0;
-        background: url("../images/bg_box_01_d.svg") no-repeat center bottom/contain;
+        .category-icon;
 
         @media @tablet {
-          padding-bottom: 75%;
-        }
-
-        body.i18n-fr & {
-          background: url("../images/bg_box_01_f.svg") no-repeat center bottom/contain;
+          padding-bottom: 72.41%; // only half of width = 420/290/2
         }
 
         .field-name-field-image {
@@ -334,11 +229,28 @@
           }
         }
 
+        .field-name-field-name {
+          position: absolute;
+          top: 56.9%;
+          left: -2%;
+          padding: 0.2em 1em 0;
+          width: auto;
+          font-family: @pxl-text-font-light;
+          font-size: 16px;
+          text-transform: uppercase;
+          text-align: center;
+          letter-spacing: 1px;
+          line-height: 1.2em;
+          color: @pxl-name-field-color;
+          background-color: @pxl-name-field-bg-color-left;
+        }
+
         .field-name-field-quote {
           position: absolute;
-          top: 68.9%;
+          overflow: hidden;
+          top: 74%;
           right: 0;
-          width: 50%;
+          width: 54%;
           height: auto;
           #pxl-mixins.hyphenate(auto);
 
@@ -350,27 +262,33 @@
               font-size: 2.5vw;
             }
             @media @tablet {
-              font-size: 17px;
+              font-size: 16px;
             }
             @media @normal {
-              font-size: 18px;
+              font-size: 20px;
             }
-            @media @wide {
-              font-size: 18px;
-            }
-
           }
         }
       }
 
       &.right-region {
-        .field-name-field-name {
-          font-size: 45px;
+        @media @tablet {
+          padding-left: 20px;
         }
 
-        .field-name-field-name-2 {
-          font-size: 45px;
+        .field-name-title {
+          h2 {
+            margin: 0;
+            font-family: @pxl-text-font;
+            font-size: 45px;
+            color: @text-color;
+            border-bottom: 2px solid @text-color;
+          }
+        }
 
+        .sharethis-buttons {
+          margin-top: 15px;
+          // see block-social for styling
         }
       }
     }
