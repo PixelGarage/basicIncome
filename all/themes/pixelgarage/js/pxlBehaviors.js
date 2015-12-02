@@ -27,6 +27,9 @@
         else if ($width >= 768) {
           fixedHeaderScrollPos = 95;
         }
+        else if ($width >= 480) {
+          fixedHeaderScrollPos = 72;
+        }
         else {
           fixedHeaderScrollPos = 60;
         }
