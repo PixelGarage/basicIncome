@@ -47,17 +47,28 @@ function pixelgarage_preprocess_page(&$vars) {
   }
 }
 
+/**
+ * Implements template_preprocess_views_exposed_form().
+ *
+ * Adds total result count to exposed form and the placeholder for the search field.
+ */
 function pixelgarage_preprocess_views_exposed_form(&$vars) {
   $view = views_get_page_view();
   $vars['total_rows'] = null;
+  if ($filter = &$vars['widgets']['filter-combine']) {
+    $placeholder = 'placeholder="' . $filter->label . '"/>';
+    $filter->widget = str_replace('/>', $placeholder, $filter->widget);
+  }
 
   if (empty($vars['form']['combine']['#value'])) return;
 
   $page_total = count($view->result);
   if(isset($view->total_rows)){
-    $vars['total_rows'] = $view->total_rows;
+    $text = ($view->total_rows == 1) ? '%hits hit' : '%hits hits';
+    $vars['total_rows'] = t($text, array('%hits' => $view->total_rows));
   } else {
-    $vars['total_rows'] = $page_total;
+    $text = ($page_total == 1) ? '%hits hit' : '%hits hits';
+    $vars['total_rows'] = t($text, array('%hits' => $page_total));
   }
 }
 
