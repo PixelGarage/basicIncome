@@ -48,25 +48,21 @@ header#navbar {
 
         img {
           margin: 10px auto;
-          height: 40px;
-          width: auto;
+          width: 237px;
+          height: auto;
           max-width: 100%;
           max-height: none;
-        }
-      }
-      @media @tablet {
-        a.logo {
-          img {
-            margin: 20px auto 10px;
-            height: 65px;
+
+          @media @narrow {
+            width: 310px;
           }
-        }
-      }
-      @media @normal {
-        a.logo {
-          img {
+          @media @tablet {
+            margin: 20px auto 10px;
+            width: 385px;
+          }
+          @media @normal {
             margin: 30px auto 10px;
-            height: 95px;
+            width: 557px;
           }
         }
       }

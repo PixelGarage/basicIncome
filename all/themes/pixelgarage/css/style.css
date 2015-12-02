@@ -10226,21 +10226,26 @@ header#navbar .navbar-top-container > .container .navbar-header a.logo {
 }
 header#navbar .navbar-top-container > .container .navbar-header a.logo img {
   margin: 10px auto;
-  height: 40px;
-  width: auto;
+  width: 237px;
+  height: auto;
   max-width: 100%;
   max-height: none;
+}
+@media screen and (min-width: 480px) {
+  header#navbar .navbar-top-container > .container .navbar-header a.logo img {
+    width: 310px;
+  }
 }
 @media screen and (min-width: 768px) {
   header#navbar .navbar-top-container > .container .navbar-header a.logo img {
     margin: 20px auto 10px;
-    height: 65px;
+    width: 385px;
   }
 }
 @media screen and (min-width: 1024px) {
   header#navbar .navbar-top-container > .container .navbar-header a.logo img {
     margin: 30px auto 10px;
-    height: 95px;
+    width: 557px;
   }
 }
 header#navbar .navbar-top-container > .container .navbar-header .navbar-toggle {
