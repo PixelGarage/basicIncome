@@ -5,7 +5,7 @@
 // Variables
 // -------------------------
 @webform-max-width: 100%;
-@webform-inline-input-width: 72%;
+@webform-inline-input-width: 55%;
 @newsletter-height: 24px;
 
 
@@ -198,16 +198,25 @@
           }
 
           label {
-            display: inline-block;
+            display: block;
+
+            @media @narrow {
+              display: inline-block;
+            }
           }
 
           input {
-            display: inline-block;
+            display: block;
+            position: static;
 
-            &.form-text {
-              position: absolute;
-              right: 0;
-              width: @webform-inline-input-width;
+            @media @narrow {
+              display: inline-block;
+
+              &.form-text {
+                position: absolute;
+                right: 0;
+                width: @webform-inline-input-width;
+              }
             }
           }
 
@@ -218,7 +227,15 @@
               display: inline-block;
 
               label {
-                display: inline;
+                display: block;
+
+                input {
+                  display: inline-block;
+                }
+
+                @media @narrow {
+                  display: inline;
+                }
               }
             }
           }

@@ -9483,15 +9483,26 @@ form#user-login {
   }
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline label {
-  display: inline-block;
+  display: block;
+}
+@media screen and (min-width: 480px) {
+  .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline label {
+    display: inline-block;
+  }
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline input {
-  display: inline-block;
+  display: block;
+  position: static;
 }
-.node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline input.form-text {
-  position: absolute;
-  right: 0;
-  width: 72%;
+@media screen and (min-width: 480px) {
+  .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline input {
+    display: inline-block;
+  }
+  .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline input.form-text {
+    position: absolute;
+    right: 0;
+    width: 55%;
+  }
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline .form-radios {
   display: inline-block;
@@ -9500,7 +9511,15 @@ form#user-login {
   display: inline-block;
 }
 .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline .form-radios .form-item label {
-  display: inline;
+  display: block;
+}
+.node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline .form-radios .form-item label input {
+  display: inline-block;
+}
+@media screen and (min-width: 480px) {
+  .node-webform div.col-sm-12 form.webform-client-form .webform-component.webform-container-inline .form-radios .form-item label {
+    display: inline;
+  }
 }
 .node-webform div.col-sm-12 form.webform-client-form div.form-actions button.webform-submit {
   display: inline-block;
