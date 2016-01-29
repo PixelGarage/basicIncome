@@ -123,7 +123,20 @@ header#navbar {
                 background: none;
               }
             }
-            &.last a,span {
+
+            &.first  a {
+              padding: 7px 15px 3px;
+              color: white;
+              #pxl-mixins.border-radius(3px);
+              border: 1px solid @pxl-color-orange;
+              background-color: @pxl-color-orange;
+
+              &:hover, &.active, &.checked {
+                color: @pxl-color-orange;
+                background: none;
+              }
+            }
+            &.last a {
               border-right: none;
             }
 

@@ -98,7 +98,7 @@ function pixelgarage_preprocess_webform_confirmation(&$vars) {
   $post->promote = 0;
   node_object_prepare($post);
 
-// fill the node properties and save it to the database
+  // fill the node properties and save it to the database
   $post->title = $submission->data[4][0] . ", " . $submission->data[13][0];
   $post->field_e_mail[$post->language][0]['email'] = $submission->data[2][0]; // email
   $post->field_name[$post->language][0]['value'] = $submission->data[4][0]; // Name(s)
@@ -111,5 +111,11 @@ function pixelgarage_preprocess_webform_confirmation(&$vars) {
   $post = node_submit($post);
   node_save($post);
 
+  // get node and render it
+  $term = taxonomy_term_load($submission->data[11][0]); // category tid
+  $vars['post_category_class'] = drupal_clean_css_identifier( $term->field_css_class[LANGUAGE_NONE][0]['value']);
+
+  $post = node_load($post->nid);
+  $vars['post'] = node_view($post, 'full');
 }
 

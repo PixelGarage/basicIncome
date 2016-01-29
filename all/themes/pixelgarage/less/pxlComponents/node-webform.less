@@ -61,15 +61,32 @@
 
 // General settings
 // -------------------------
+//
+// Webform confirmation
+.webform-confirmation {
+  p {
+    font-family: @pxl-text-font;
+    font-size: 20px;
+    text-align: left;
+    color: @text-color;
+    white-space: normal;
+    #pxl-mixins.hyphenate;
+  }
+}
+.links {
+  &:before {
+    content: '\f112';
+    font-family: @pxl-icon-font;
+    font-size: @font-size-base;
+  }
+}
+
+//
+// webform
 .node-webform {
   padding-top: 30px;
 
-  div.col-sm-12 {
-    width: 100%;
-
-    @media @normal {
-      width: 70%;
-    }
+  div.col-sm-6 {
 
     .field-name-title {
       h2 {
@@ -85,6 +102,14 @@
         @media @tablet {
           font-size: @pxl-max-font-size-large;
         }
+      }
+    }
+
+    .field-name-field-image {
+      img {
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
       }
     }
 
